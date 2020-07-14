@@ -4,26 +4,44 @@ Ustawiamy godzinę nawadniania, np: 04:00 rano, oraz % wilgotności trawnika od 
 
 --------------------------------------------------------------------------------------------------------------------------
 # UŻYTE ELEMENTY 
-1x arduino mega
-1x RTC Czujnik czasu rzeczywistego 
-1x Czujnik wilgotności gleby 
-2x 4ch MOFSET (zestaw przekaźników) 
-1x LCD 
-1x Potencjometr 
+1x arduino mega 
+
+1x RTC Czujnik czasu rzeczywistego
+
+1x Czujnik wilgotności gleby
+
+2x 4ch MOFSET (zestaw przekaźników)
+
+1x LCD
+
+1x Potencjometr
+
+
 
 8x elektrozawór 12v  / 1/2 cala 
+
 1x gniazdo 2 kanałowe (wtyczka internetowa) 
+
 100m kabel internetowy + 2x wtyczka 
+
 100m wąż ogrodowy 1/2 cala 
+
 8x trójnik na wąż ogrodowy 
+
 24x zaciski metalowe (skręcane)
+
 16x szybkozłączka (gwint 1/2 cala - szybko złączka męska) 
+
 16x szybkozłączka (wąż->żeńska)
 
+
 8x zraszacz wysuwanych 
+
 8x przyłączenie zraszacz->wąż 
 
+
 3x kran (wejście wody do systemu+ 2x zakończenie np. na ogrodzie) 
+
 
 --------------------------------------------------------------------------------------------------------------------------
 # SCHEMAT POŁĄCZENIOWY 
