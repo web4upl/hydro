@@ -68,6 +68,7 @@ GND -> ATX GND
 52, 53, 50, 51, 48, 49 - LCD 
 
 A15 -> Odczyt czujnika wilgotności 
+A14 -> Sygnał do servo (opcjonalnie)  
 
 A0, A1, A2, A3, A4, A5, A6, A7 - elektrozawory 
 
