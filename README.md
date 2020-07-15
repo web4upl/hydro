@@ -79,7 +79,7 @@ Biblioteki
   RTClib.h
   LiquidCrystal.h
 
-
+kod w plikuL hydro3.ino 
 --------------------------------------------------------------------------------------------------------------------------
 # PLANY NA PRZYSZŁOŚĆ
  - czujnik przepływu cieczy (liczenie zużycia, wykrywanie awarii/przecieków) 
