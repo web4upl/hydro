@@ -87,6 +87,7 @@ kod w plikuL hydro3.ino
  - wifi do obsługi przez www / baza danych historii pomiarów / przeglądanie historii 
  - rozbudowa o 3 zraszacze z drugiej strony domu
  - rozbudowa o wąż kroplujący w sadzie 
+ - system odwadniania na zimę 
 
 --------------------------------------------------------------------------------------------------------------------------
 # ZDJĘCIA 
