@@ -6,23 +6,25 @@ Ustawiamy godzinę nawadniania, np: 04:00 rano, oraz % wilgotności trawnika od 
 # UŻYTE ELEMENTY 
 1x arduino mega 
 
-1x RTC Czujnik czasu rzeczywistego
+1x RTC Czujnik czasu rzeczywistego #DS1302 #SPI
 
-1x Czujnik wilgotności gleby
+1x Czujnik wilgotności gleby #FC-28
 
-2x 4ch MOFSET (zestaw przekaźników)
+2x 4ch MOFSET (zestaw przekaźników) #IRF540 V4.0 
 
-1x LCD
+1x LCD  2x16
 
-1x Potencjometr
+1x Potencjometr 
 
+1x Zasilacz ATX 
+1x Zasilacz komputerowy 20V 
 
 
 8x elektrozawór 12v  / 1/2 cala 
 
 1x gniazdo 2 kanałowe (wtyczka internetowa) 
 
-100m kabel internetowy + 2x wtyczka 
+100m kabel internetowy RJ45 + 2x wtyczka 
 
 100m wąż ogrodowy 1/2 cala 
 
@@ -35,13 +37,14 @@ Ustawiamy godzinę nawadniania, np: 04:00 rano, oraz % wilgotności trawnika od 
 16x szybkozłączka (wąż->żeńska)
 
 
-8x zraszacz wysuwanych 
+8x zraszacz wysuwany Rain Bird 3504 
 
 8x przyłączenie zraszacz->wąż 
 
 
-3x kran (wejście wody do systemu+ 2x zakończenie np. na ogrodzie) 
+3x kran (wejście wody do systemu + 2x zakończenie np. na ogrodzie) 
 
+8x rura PCV + 16 zatyczek do rur PCV 
 
 --------------------------------------------------------------------------------------------------------------------------
 # SCHEMAT POŁĄCZENIOWY 
@@ -56,13 +59,26 @@ Przewodem internetowym 8 żył rozprowadzone jest zasilanie do zaworów.
           - 2x czujnik wilgotności
           - 4x wolne na przyszłość  
 Oba przewody wchodzą do kotłowni i są wpięte do urządzenia przez podwójne gniazdo RJ45 
-[tu schemat]
 
+Opis pinów ARDUINO 
+Vcc -> ATX 5V (always on)
+GND -> ATX GND 
+13  -> ATX ON (uruchomienie zasilacza/SLEEP OFF) 
+
+52, 53, 50, 51, 48, 49 - LCD 
+
+A15 -> Odczyt czujnika wilgotności 
+
+A0, A1, A2, A3, A4, A5, A6, A7 - elektrozawory 
 
 --------------------------------------------------------------------------------------------------------------------------
 # KOD
-[wymagane biblioteki]
-[kod]
+Biblioteki 
+  Servo.h
+  Wire.h
+  RTClib.h
+  LiquidCrystal.h
+
 
 --------------------------------------------------------------------------------------------------------------------------
 # PLANY NA PRZYSZŁOŚĆ
