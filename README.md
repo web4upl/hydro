@@ -17,12 +17,13 @@ Ustawiamy godzinę nawadniania, np: 04:00 rano, oraz % wilgotności trawnika od 
 1x Potencjometr 
 
 1x Zasilacz ATX 
-1x Zasilacz komputerowy 20V 
+
+1x Zasilacz (nie wiem od czego) 20V 
 
 
 8x elektrozawór 12v  / 1/2 cala 
 
-1x gniazdo 2 kanałowe (wtyczka internetowa) 
+1x gniazdo RJ45 2 kanałowe (wtyczka internetowa) 
 
 100m kabel internetowy RJ45 + 2x wtyczka 
 
@@ -42,7 +43,7 @@ Ustawiamy godzinę nawadniania, np: 04:00 rano, oraz % wilgotności trawnika od 
 8x przyłączenie zraszacz->wąż 
 
 
-3x kran (wejście wody do systemu + 2x zakończenie np. na ogrodzie) 
+3x kran (wejście wody do systemu + 2x zakończenie linii np. na ogrodzie) 
 
 8x rura PCV + 16 zatyczek do rur PCV 
 
