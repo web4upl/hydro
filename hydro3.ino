@@ -3,18 +3,18 @@
   #include "RTClib.h"
   #include <LiquidCrystal.h>
 
-  // LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+  //                rs  en  d4  d5  d6  d7
   LiquidCrystal lcd(52, 53, 50, 51, 48, 49);
 
   Servo myservo;
-  RTC_Millis rtc;
+  RTC_Millis rtc;    //<- wersja bez DS1302
   // DS1302 (ce_pin, sck_pin, io_pin);
   // DS1302 rtc(38, 40, 42);
 
 
   /*  ========== TU ZMIEŃ USTAWIENIA SYSTEMU ================ */
   /*  ======================================================= */
-  int debug = 0;                    // "1" - odpala serial na 9600 i wyswietla info na monitor (wykonuje podlewanie co 10min.)
+  int debug = 0;                    // "1" - odpala serial na 9600 i wyswietla info na monitor
   int GodzinaStart = 6;             // godzina uruchomienia
   int MinutaStart = 0;              // minuta uruchomienia
   int CzasPodlewania = 8;           // minuty
@@ -48,41 +48,15 @@
   int SprSzybko=0;
   int OstatnieWykonienie=0;  // Ikonka ostatnie wykonanie
 
+  // Grafiki na LCD
   uint8_t clock[8] = {0x0,0xe,0x15,0x17,0x11,0xe,0x0};
   uint8_t stop[8] =  {0x0,0x1b,0xe,0x4,0xe,0x1b,0x0};
   uint8_t start[8] = {0x0,0x1,0x3,0x16,0x1c,0x8,0x0};
   byte kropla[8] = {  0b00000,  0b01000,  0b01100,  0b01110,  0b11111,  0b11101,  0b01110, 0b00000 };
 
-  byte rosnie[8] = {
-       0b00000,
-       0b00100,
-       0b01110,
-       0b11111,
-       0b00000,
-       0b00000,
-       0b00000,
-       0b00000
-  };
-  byte maleje[8] = {
-       0b00000,
-       0b00000,
-       0b00000,
-       0b11111,
-       0b01110,
-       0b00100,
-       0b00000,
-       0b00000
-  };
-  byte stoi[8] = {
-       0b00000,
-       0b00000,
-       0b00001,
-       0b00011,
-       0b00001,
-       0b00000,
-       0b00000,
-       0b00000
-  };
+  byte rosnie[8] = { 0b00000, 0b00100, 0b01110, 0b11111, 0b00000, 0b00000, 0b00000, 0b00000 };
+  byte maleje[8] = { 0b00000, 0b00000, 0b00000, 0b11111, 0b01110, 0b00100, 0b00000, 0b00000 };
+  byte stoi[8] = { 0b00000, 0b00000, 0b00001, 0b00011, 0b00001, 0b00000, 0b00000, 0b00000 };
 
 
   // --------
@@ -103,8 +77,7 @@
 
     // WYSWIETLACZ LCD
     lcd.setCursor(0,0);
-    lcd.print("DropGRASS Start...");
-
+    lcd.print("HYDRO Start...  ");
 
     // SLEEP Zasilacza
     pinMode(13, OUTPUT);
@@ -116,16 +89,7 @@
     // WILGOTNOSC GLEBA
     pinMode(Wilgotnosc, INPUT);
 
-    /*
-    for (int i = 2; i <= Punktow; i++) {
-      pinMode(i, OUTPUT);
-      digitalWrite(i, LOW);
-      Serial.println( "Ładuje pin: " + String(i) );
 
-
-      delay(100);
-    }
-    */
     for (int thisPin = 0; thisPin < Punktow; thisPin++) {
         pinMode(tabPunkty[thisPin], OUTPUT);
         digitalWrite(tabPunkty[thisPin], LOW);
@@ -140,20 +104,11 @@
 
     // Informacyjna wilgotnosc przy starcie
     SprawdzWilgotnoscFast();
-    /*
-    while ( IloscPobranWilgotnosc < 3 ) {
-         IloscPobranWilgotnosc++;
-         SprawdzWilgotnosc();
-         delay(300);
-    }
-    AktOdczytWilgotnosc = SumaWilgotnosc / 3;
-    IloscPobranWilgotnosc = 0;
-    SumaWilgotnosc = 0;
-    */
 
 
     // Start ZEGAR
-    rtc.begin(DateTime(__DATE__, __TIME__));
+     rtc.begin(DateTime(__DATE__, __TIME__));
+
     /*
     rtc.begin();
     if (! rtc.isrunning()) {
