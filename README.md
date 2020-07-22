@@ -63,12 +63,18 @@ Oba przewody wchodzą do kotłowni i są wpięte do urządzenia przez podwójne 
 
 Opis pinów ARDUINO 
 Vcc -> ATX 5V (always on)
-GND -> ATX GND 
+
+GND -> ATX GND
+
 13  -> ATX ON (uruchomienie zasilacza/SLEEP OFF) 
+
+rs  en  d4  d5  d6  d7
 
 52, 53, 50, 51, 48, 49 - LCD 
 
+
 A15 -> Odczyt czujnika wilgotności 
+
 A14 -> Sygnał do servo (opcjonalnie)  
 
 A0, A1, A2, A3, A4, A5, A6, A7 - elektrozawory 
@@ -85,11 +91,10 @@ kod w plikuL hydro3.ino
 --------------------------------------------------------------------------------------------------------------------------
 # PLANY NA PRZYSZŁOŚĆ
  - czujnik przepływu cieczy (liczenie zużycia, wykrywanie awarii/przecieków) 
- - wifi do obsługi przez www / baza danych historii pomiarów / przeglądanie historii 
  - rozbudowa o 3 zraszacze z drugiej strony domu
  - rozbudowa o wąż kroplujący w sadzie 
  - system odwadniania na zimę 
+ - wifi do obsługi przez www / baza danych historii pomiarów / przeglądanie historii 
+ 
 
---------------------------------------------------------------------------------------------------------------------------
-# ZDJĘCIA 
-[zdjęcia]
+
